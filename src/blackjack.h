@@ -57,10 +57,5 @@ static inline int random_value()
     return rand() % 10 + 2;
 }
 
-static inline void reset_hands(int *player, int *dealer)
-{
-    *player = 0;
-    *dealer = 0;
-}
 
 #endif

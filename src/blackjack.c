@@ -116,39 +116,6 @@ void player_call_card(Hand *playerHand, Hand *dealerHand)
     
 }
 
-void player_hit(int *playerHand)
-{
-    *playerHand += random_value();
-    printf("Player amount: %d\n", *playerHand);
-}
-
-void player_call(int *playerHand, int *dealerHand)
-{
-    printf("Dealer has: %d\n", *dealerHand);
-    while (*dealerHand < 16)
-    {
-        *dealerHand += random_value();
-        printf("Dealer has: %d\n", *dealerHand);
-    }
-    if (*dealerHand > 21)
-    {
-        printf("Dealer busted! You win!\n");
-        reset_hands(playerHand, dealerHand);
-    }
-    else if (*dealerHand > *playerHand)
-    {
-        printf("Dealer wins!\n");
-    }
-    else if (*dealerHand < *playerHand)
-    {
-        printf("Player wins!\n");
-    }
-    else
-    {
-        printf("Dealer and Player push\n");
-    }
-    reset_hands(playerHand, dealerHand);
-}
 
 int main(int argc, char *argv[])
 {
